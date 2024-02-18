@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.12)  18 FEB 2024 15:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.6.12)  18 FEB 2024 16:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -235,25 +235,30 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 79.
  [2 <./images/robberybob.png>] [3]
-<./images/colorpallet.png, id=22, 150.5625pt x 227.85126pt>
+<./images/concept.png, id=22, 48.18pt x 84.315pt>
+File: ./images/concept.png Graphic file (type png)
+<use ./images/concept.png>
+Package pdftex.def Info: ./images/concept.png  used on input line 129.
+(pdftex.def)             Requested size: 96.35971pt x 168.62955pt.
+<./images/colorpallet.png, id=23, 150.5625pt x 227.85126pt>
 File: ./images/colorpallet.png Graphic file (type png)
 <use ./images/colorpallet.png>
-Package pdftex.def Info: ./images/colorpallet.png  used on input line 132.
+Package pdftex.def Info: ./images/colorpallet.png  used on input line 137.
 (pdftex.def)             Requested size: 105.39302pt x 159.49478pt.
- [4 <./images/colorpallet.png>] [5] (build/main.aux) ) 
+ [4 <./images/concept.png> <./images/colorpallet.png>] [5] (build/main.aux) ) 
 Here is how much of TeX's memory you used:
- 2916 strings out of 480080
- 50727 string characters out of 5891145
- 432035 words of memory out of 5000000
- 20875 multiletter control sequences out of 15000+600000
+ 2923 strings out of 480080
+ 50889 string characters out of 5891145
+ 434035 words of memory out of 5000000
+ 20881 multiletter control sequences out of 15000+600000
  476094 words of font info for 50 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  68i,18n,77p,331b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on build/main.pdf (5 pages, 1255714 bytes).
+Output written on build/main.pdf (5 pages, 1256502 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

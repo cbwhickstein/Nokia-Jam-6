@@ -253,6 +253,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT ./images/concept.png
+INPUT ./images/concept.png
+INPUT ./images/concept.png
+INPUT ./images/concept.png
+INPUT ./images/concept.png
 INPUT ./images/colorpallet.png
 INPUT ./images/colorpallet.png
 INPUT ./images/colorpallet.png
