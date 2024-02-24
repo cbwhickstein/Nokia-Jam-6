@@ -1,11 +1,18 @@
 extends CharacterBody2D
 
+# Subnodes
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var view = $view
+
+
+
+# signals
 
 # gloabal vars
 var direction: Vector2 = Vector2.ZERO
 var step_timer = 0
 var collide
+var seeing_player: bool = false
 
 # CONSTANTS
 var speed = 0.1
@@ -34,6 +41,9 @@ func _physics_process(delta):
 enum StateEnum {
 	unknown,
 	guardBeforePrison,
+	turning,
+	horizontal_walking,
+	vertical_walking,
 }
 var state: StateEnum = StateEnum.unknown
 
@@ -48,20 +58,55 @@ func behavior():
 			direction = -direction
 						
 		velocity = direction
-			
+		
+	elif (state == StateEnum.turning):
+		pass
+		
+	elif (state == StateEnum.horizontal_walking):
+		# Let the guard walk horizontally from left to right
+		# and send signal if player is in sight
+		
+		#init condition
+		if (direction == Vector2.ZERO):
+			direction = Vector2(-1, 0)
+			max_step_timer = max_step_timer_normal
+		
+		# normal behavior
+		
+		# enable current view and disable others
+		enable_view(direction)
+		if (view.player_in_sight()):
+			print(Time.get_ticks_msec(), " Player in sight")
+		
+		# check for wall and mirror direction
+		if (collide):
+			collide = null
+			direction = -direction
+		
+		if (not seeing_player):
+			velocity = direction
 
 func set_state(new_state: StateEnum):
 	state = new_state
 
+func enable_view(direction: Vector2):
+	view.update_direction(direction)
+
 # Animation functions
 
 func update_animation_parameters():
-	if (velocity == Vector2.ZERO):
+	if (seeing_player):
+		animation_tree["parameters/conditions/idle"] = false
+		animation_tree["parameters/conditions/is_moving"] = false
+		animation_tree["parameters/conditions/alert"] = true
+	elif (velocity == Vector2.ZERO):
 		animation_tree["parameters/conditions/idle"] = true
 		animation_tree["parameters/conditions/is_moving"] = false
+		animation_tree["parameters/conditions/alert"] = false
 	else:
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/is_moving"] = true
+		animation_tree["parameters/conditions/alert"] = false
 		
 	if (velocity != Vector2.ZERO):
 		animation_tree["parameters/idle/blend_position"] = direction
