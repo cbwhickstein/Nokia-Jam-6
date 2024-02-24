@@ -6,15 +6,17 @@
 position = Vector2(21, 40)
 
 [node name="player" parent="." instance=ExtResource("1_2n10h")]
+position = Vector2(0, 2)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, -5)
 zoom = Vector2(10, 10)
 
-[node name="ColorRect" type="ColorRect" parent="player"]
+[node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
 offset_left = -21.0
-offset_top = -47.0
+offset_top = -45.0
 offset_right = 21.0
-offset_bottom = 37.0
+offset_bottom = 39.0
 color = Color(0.780392, 0.941176, 0.847059, 1)
+metadata/_edit_use_anchors_ = true

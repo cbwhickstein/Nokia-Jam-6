@@ -7,7 +7,9 @@ var direction: Vector2 = Vector2.ZERO
 
 
 # CONSTANTS
-var speed = 10
+var speed = 0.1
+var step_timer = 0
+var max_step_timer = 0.04
 
 func _ready():
 	animation_tree.active = true
@@ -16,14 +18,18 @@ func _process(delta):
 	update_animation_parameters()
 
 func _physics_process(delta):
-	direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down").normalized()
-		
+	direction = Input.get_vector("left", "right", "up", "down")
+	
 	if (direction):
-		velocity = direction * speed
+		velocity = direction
 	else:
 		velocity = Vector2.ZERO
 		
-	move_and_slide()
+	if (step_timer >= max_step_timer):
+		move_and_collide(velocity)
+		step_timer = 0
+	else:
+		step_timer += delta	
 
 func update_animation_parameters():
 	if (velocity == Vector2.ZERO):

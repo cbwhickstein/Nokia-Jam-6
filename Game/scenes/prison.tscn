@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx5mwhgeby3qi"]
+
+[ext_resource type="PackedScene" uid="uid://bseclalavyb7j" path="res://scenes/player.tscn" id="1_1bycy"]
+[ext_resource type="Texture2D" uid="uid://dufrderbln6jg" path="res://resources/images/front_bars.png" id="1_xgtk4"]
+[ext_resource type="PackedScene" uid="uid://cudb5nl6akvdj" path="res://scenes/npc.tscn" id="2_4qbd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3d7c"]
+size = Vector2(2, 75.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acodi"]
+size = Vector2(42, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71s34"]
+size = Vector2(47, 8)
+
+[node name="prison" type="Node2D"]
+
+[node name="characters" type="Node2D" parent="."]
+
+[node name="player" parent="characters" instance=ExtResource("1_1bycy")]
+position = Vector2(-2, 16)
+
+[node name="npc" parent="characters" instance=ExtResource("2_4qbd3")]
+position = Vector2(14, 23)
+
+[node name="additional" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="additional"]
+position = Vector2(1, 0)
+zoom = Vector2(10, 10)
+
+[node name="background" type="ColorRect" parent="additional"]
+z_index = -1
+offset_left = -20.0
+offset_top = -42.0
+offset_right = 22.0
+offset_bottom = 42.0
+color = Color(0.780392, 0.941176, 0.847059, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="border" type="StaticBody2D" parent="."]
+
+[node name="left_border" type="CollisionShape2D" parent="border"]
+position = Vector2(-21, 6.5)
+shape = SubResource("RectangleShape2D_j3d7c")
+
+[node name="right_border" type="CollisionShape2D" parent="border"]
+position = Vector2(23, 6.25)
+shape = SubResource("RectangleShape2D_j3d7c")
+
+[node name="bottom_border" type="CollisionShape2D" parent="border"]
+position = Vector2(1, 43)
+shape = SubResource("RectangleShape2D_acodi")
+
+[node name="front_bars" type="StaticBody2D" parent="border"]
+
+[node name="Sprite2D" type="Sprite2D" parent="border/front_bars"]
+texture_filter = 1
+position = Vector2(2, -35)
+texture = ExtResource("1_xgtk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/front_bars"]
+position = Vector2(1.5, -35)
+shape = SubResource("RectangleShape2D_71s34")

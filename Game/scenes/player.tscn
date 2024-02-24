@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lfix11r1uv16" path="res://resources/images/player.png" id="1_l4jak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pm3r8"]
-size = Vector2(2, 8)
+size = Vector2(2, 5)
 
 [sub_resource type="Animation" id="Animation_18nmr"]
 resource_name = "idle_down"
@@ -237,7 +237,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 script = ExtResource("1_jorq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_pm3r8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
