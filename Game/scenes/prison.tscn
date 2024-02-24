@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx5mwhgeby3qi"]
+[gd_scene load_steps=9 format=3 uid="uid://bx5mwhgeby3qi"]
 
 [ext_resource type="PackedScene" uid="uid://bseclalavyb7j" path="res://scenes/player.tscn" id="1_1bycy"]
+[ext_resource type="Script" path="res://scripts/prison.gd" id="1_bww6y"]
 [ext_resource type="Texture2D" uid="uid://dufrderbln6jg" path="res://resources/images/front_bars.png" id="1_xgtk4"]
 [ext_resource type="PackedScene" uid="uid://cudb5nl6akvdj" path="res://scenes/npc.tscn" id="2_4qbd3"]
+[ext_resource type="PackedScene" uid="uid://bhrmfhean0i7t" path="res://scenes/guard.tscn" id="3_tyb0u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3d7c"]
 size = Vector2(2, 75.5)
@@ -14,14 +16,18 @@ size = Vector2(42, 2)
 size = Vector2(47, 8)
 
 [node name="prison" type="Node2D"]
+script = ExtResource("1_bww6y")
 
 [node name="characters" type="Node2D" parent="."]
 
 [node name="player" parent="characters" instance=ExtResource("1_1bycy")]
-position = Vector2(-2, 16)
+position = Vector2(0, 14)
 
 [node name="npc" parent="characters" instance=ExtResource("2_4qbd3")]
-position = Vector2(14, 23)
+position = Vector2(16, 29)
+
+[node name="guard" parent="characters" instance=ExtResource("3_tyb0u")]
+position = Vector2(-7, -19)
 
 [node name="additional" type="Node2D" parent="."]
 
@@ -53,6 +59,7 @@ position = Vector2(1, 43)
 shape = SubResource("RectangleShape2D_acodi")
 
 [node name="front_bars" type="StaticBody2D" parent="border"]
+position = Vector2(0, 35)
 
 [node name="Sprite2D" type="Sprite2D" parent="border/front_bars"]
 texture_filter = 1
