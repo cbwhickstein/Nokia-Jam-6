@@ -1,6 +1,9 @@
 extends Node2D
-@onready var guard = $guard
 @onready var music_player = $player/music_player
+@onready var guard = $guards/guard
+@onready var guard_2 = $guards/guard2
+@onready var guard_3 = $guards/guard3
+@onready var guard_4 = $guards/guard4
 
 var timer_counter: float = 0.0
 var time_max: float = 0.3
@@ -10,15 +13,7 @@ var level_finished = false
 var won = false
 var play_game_over = false
 
-#func _ready():
-	#guard.state = guard.StateEnum.vertical_walking
-	#music_player.current_state = music_player.state.escape
-	
 
-func _on_guard_player_seen():
-	print("Game Over")
-	level_finished = true
-	won = false
 	
 	
 	
@@ -43,8 +38,26 @@ func _process(delta):
 		play_game_over = true
 			
 
-
+func guard_player_seen():
+	print("Game Over")
+	level_finished = true
+	won = false
 
 func _on_player_level_won():
 	level_finished = true
 	won = true
+
+func _on_guard_player_seen():
+	guard_player_seen()
+
+func _on_guard_2_player_seen():
+	guard_player_seen()
+
+
+func _on_guard_3_player_seen():
+	guard_player_seen()
+
+
+func _on_guard_4_player_seen():
+	guard_player_seen()
+

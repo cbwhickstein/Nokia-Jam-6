@@ -17,7 +17,7 @@ enum state {
 	start = 5,
 	alert = 6,
 }
-var current_state: state = state.nothing
+@export var current_state: state = state.nothing
 var last_state: state = state.nothing
 
 func _process(delta):

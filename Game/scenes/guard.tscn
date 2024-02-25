@@ -352,20 +352,20 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-31, -75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbpwa"]
-size = Vector2(20, 21.5)
+size = Vector2(20, 16.5)
 
 [sub_resource type="GDScript" id="GDScript_0yfq7"]
 script/source = "extends CollisionShape2D
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehjiy"]
-size = Vector2(20, 22)
+size = Vector2(20, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30ksl"]
-size = Vector2(26, 19)
+size = Vector2(17, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1d4v1"]
-size = Vector2(25.5, 19)
+size = Vector2(17, 18.5)
 
 [node name="guard" type="CharacterBody2D"]
 script = ExtResource("1_kwya7")
@@ -377,6 +377,7 @@ shape = SubResource("RectangleShape2D_4fxrs")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_he2wx")
 hframes = 22
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -400,28 +401,28 @@ script = ExtResource("3_68coi")
 [node name="up" type="Area2D" parent="view"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view/up"]
-position = Vector2(0, -9.25)
+position = Vector2(0, -6.75)
 shape = SubResource("RectangleShape2D_gbpwa")
 script = SubResource("GDScript_0yfq7")
 
 [node name="down" type="Area2D" parent="view"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view/down"]
-position = Vector2(0, 11)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_ehjiy")
 script = SubResource("GDScript_0yfq7")
 
 [node name="left" type="Area2D" parent="view"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view/left"]
-position = Vector2(-13, 0)
+position = Vector2(-8.5, 0)
 shape = SubResource("RectangleShape2D_30ksl")
 script = SubResource("GDScript_0yfq7")
 
 [node name="right" type="Area2D" parent="view"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="view/right"]
-position = Vector2(13, 0)
+position = Vector2(9, 0)
 shape = SubResource("RectangleShape2D_1d4v1")
 script = SubResource("GDScript_0yfq7")
 

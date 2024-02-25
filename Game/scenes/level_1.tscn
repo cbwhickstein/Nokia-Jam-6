@@ -1,34 +1,355 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddl20yrcybqwh"]
+[gd_scene load_steps=8 format=3 uid="uid://ddl20yrcybqwh"]
 
 [ext_resource type="PackedScene" uid="uid://bseclalavyb7j" path="res://scenes/player.tscn" id="1_kgpao"]
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_qd1s4"]
 [ext_resource type="PackedScene" uid="uid://bhrmfhean0i7t" path="res://scenes/guard.tscn" id="2_nnh58"]
+[ext_resource type="PackedScene" uid="uid://b4veq0dlyxad1" path="res://scenes/vwall.tscn" id="3_8uakj"]
+[ext_resource type="PackedScene" uid="uid://cs821tfgin0jx" path="res://scenes/music_player.tscn" id="3_espl2"]
 [ext_resource type="PackedScene" uid="uid://bpn7cdgb3jbif" path="res://scenes/hwall.tscn" id="3_mkltq"]
+[ext_resource type="PackedScene" uid="uid://bwcx4jjr4rqvd" path="res://scenes/goal.tscn" id="5_qvbf5"]
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_qd1s4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_right = 288.0
-offset_bottom = 223.0
+offset_left = -16.0
+offset_right = 349.0
+offset_bottom = 296.0
 color = Color(0.780392, 0.941176, 0.847059, 1)
 
 [node name="player" parent="." instance=ExtResource("1_kgpao")]
-position = Vector2(73, 53)
+position = Vector2(60, 191)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, 4)
 zoom = Vector2(10, 10)
 
-[node name="guard" parent="." instance=ExtResource("2_nnh58")]
-position = Vector2(72, 20)
+[node name="music_player" parent="player" instance=ExtResource("3_espl2")]
+current_state = 1
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="walls" type="Node2D" parent="."]
+position = Vector2(-12, 121)
 
-[node name="hwall" parent="Node2D" instance=ExtResource("3_mkltq")]
-position = Vector2(73, 41)
+[node name="horizontal" type="Node2D" parent="walls"]
 
-[node name="hwall2" parent="Node2D" instance=ExtResource("3_mkltq")]
-position = Vector2(81, 41)
+[node name="hwall" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(56, 41)
 
-[node name="hwall3" parent="Node2D" instance=ExtResource("3_mkltq")]
-position = Vector2(65, 41)
+[node name="hwall2" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(64, 41)
+
+[node name="hwall3" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(96, 41)
+
+[node name="hwall4" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(80, 41)
+
+[node name="hwall5" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(88, 41)
+
+[node name="hwall6" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(48, 41)
+
+[node name="hwall7" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(56, 85)
+
+[node name="hwall8" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(64, 85)
+
+[node name="hwall9" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(96, 85)
+
+[node name="hwall10" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(80, 85)
+
+[node name="hwall11" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(88, 85)
+
+[node name="hwall12" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(48, 85)
+
+[node name="hwall13" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(72, 85)
+
+[node name="hwall14" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(104, 41)
+
+[node name="hwall15" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(112, 41)
+
+[node name="hwall16" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(68, 5)
+
+[node name="hwall17" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(83, 5)
+
+[node name="hwall18" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(91, 5)
+
+[node name="hwall19" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(99, 5)
+
+[node name="hwall20" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(107, 5)
+
+[node name="hwall21" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(115, 5)
+
+[node name="hwall22" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(72, -35)
+
+[node name="hwall23" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(80, -35)
+
+[node name="hwall24" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(88, -35)
+
+[node name="hwall25" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(96, -35)
+
+[node name="hwall26" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(104, -35)
+
+[node name="hwall27" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(112, -35)
+
+[node name="hwall28" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(120, -35)
+
+[node name="hwall29" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(128, -35)
+
+[node name="hwall30" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(123, 5)
+
+[node name="hwall31" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(131, 5)
+
+[node name="hwall32" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(140, -7)
+
+[node name="hwall33" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(148, -7)
+
+[node name="hwall34" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(156, -7)
+
+[node name="hwall35" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(164, -7)
+
+[node name="hwall36" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(172, -7)
+
+[node name="hwall38" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(180, 85)
+
+[node name="hwall37" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(180, -7)
+
+[node name="hwall39" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(172, 85)
+
+[node name="hwall40" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(164, 85)
+
+[node name="hwall41" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(156, 85)
+
+[node name="hwall42" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(148, 85)
+
+[node name="hwall43" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(140, 85)
+
+[node name="hwall44" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(180, 64)
+
+[node name="hwall45" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(172, 64)
+
+[node name="hwall46" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(164, 64)
+
+[node name="hwall48" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(148, 64)
+
+[node name="hwall49" parent="walls/horizontal" instance=ExtResource("3_mkltq")]
+position = Vector2(140, 64)
+
+[node name="vertical" type="Node2D" parent="walls"]
+position = Vector2(58, 55)
+
+[node name="vwall" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(-12, -8)
+
+[node name="vwall2" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(-12, 0)
+
+[node name="vwall3" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(-12, 8)
+
+[node name="vwall4" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(-12, 16)
+
+[node name="vwall5" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(-12, 24)
+
+[node name="vwall6" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(40, -8)
+
+[node name="vwall7" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(40, 0)
+
+[node name="vwall8" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(40, 8)
+
+[node name="vwall9" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(40, 16)
+
+[node name="vwall10" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(40, 24)
+
+[node name="vwall14" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -36)
+
+[node name="vwall13" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -44)
+
+[node name="vwall12" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -28)
+
+[node name="vwall11" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -20)
+
+[node name="vwall15" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(56, -20)
+
+[node name="vwall16" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(56, -28)
+
+[node name="vwall17" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(56, -36)
+
+[node name="vwall18" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(56, -44)
+
+[node name="vwall19" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -56)
+
+[node name="vwall20" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -64)
+
+[node name="vwall21" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -72)
+
+[node name="vwall22" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -80)
+
+[node name="vwall23" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(8, -88)
+
+[node name="vwall24" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(76, -88)
+
+[node name="vwall25" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(76, -80)
+
+[node name="vwall26" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(76, -72)
+
+[node name="vwall27" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(76, -64)
+
+[node name="vwall28" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, -48)
+
+[node name="vwall29" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, -40)
+
+[node name="vwall30" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, -32)
+
+[node name="vwall31" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, -24)
+
+[node name="vwall32" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, -16)
+
+[node name="vwall33" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, -8)
+
+[node name="vwall34" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -60)
+
+[node name="vwall35" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -52)
+
+[node name="vwall36" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -44)
+
+[node name="vwall37" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -36)
+
+[node name="vwall38" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -28)
+
+[node name="vwall39" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -20)
+
+[node name="vwall40" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -12)
+
+[node name="vwall41" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, -4)
+
+[node name="vwall42" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, 0)
+
+[node name="vwall43" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, 8)
+
+[node name="vwall44" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, 16)
+
+[node name="vwall45" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(79, 24)
+
+[node name="vwall46" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, 4)
+
+[node name="vwall47" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, 12)
+
+[node name="vwall48" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, 20)
+
+[node name="vwall49" parent="walls/vertical" instance=ExtResource("3_8uakj")]
+position = Vector2(128, 28)
+
+[node name="guards" type="Node2D" parent="."]
+
+[node name="guard" parent="guards" instance=ExtResource("2_nnh58")]
+position = Vector2(94, 148)
+state = 3
+
+[node name="guard2" parent="guards" instance=ExtResource("2_nnh58")]
+position = Vector2(85, 106)
+state = 4
+
+[node name="guard3" parent="guards" instance=ExtResource("2_nnh58")]
+position = Vector2(166, 146)
+state = 3
+
+[node name="guard4" parent="guards" instance=ExtResource("2_nnh58")]
+position = Vector2(148, 158)
+state = 4
+
+[node name="goal" parent="." instance=ExtResource("5_qvbf5")]
+position = Vector2(166, 196)
+
+[connection signal="level_won" from="player" to="." method="_on_player_level_won"]
+[connection signal="player_seen" from="guards/guard" to="." method="_on_guard_player_seen"]
+[connection signal="player_seen" from="guards/guard2" to="." method="_on_guard_2_player_seen"]
+[connection signal="player_seen" from="guards/guard3" to="." method="_on_guard_3_player_seen"]
+[connection signal="player_seen" from="guards/guard4" to="." method="_on_guard_4_player_seen"]
