@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 # signals
 signal start_level
+signal level_won
 
 # gloabal vars
 var direction: Vector2 = Vector2.ZERO
@@ -38,6 +39,8 @@ func _physics_process(delta):
 		match collision.get_collider().name:
 			"front_bars":
 				start_level.emit()
+			"goal":
+				level_won.emit()
 		collision = null
 
 func update_animation_parameters():

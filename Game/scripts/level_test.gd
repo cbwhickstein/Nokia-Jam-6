@@ -37,4 +37,14 @@ func _process(delta):
 			play_game_over = true
 			music_player.current_state = music_player.state.game_over
 			timer_counter = 0.0
+			
+	elif (level_finished and won):
+		music_player.current_state = music_player.state.win
+		play_game_over = true
+			
 
+
+
+func _on_player_level_won():
+	level_finished = true
+	won = true

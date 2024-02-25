@@ -1,9 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://cudb5nl6akvdj"]
+[gd_scene load_steps=28 format=3 uid="uid://bwcx4jjr4rqvd"]
 
-[ext_resource type="Texture2D" uid="uid://6wsyfwms2q05" path="res://resources/images/npc.png" id="1_ifcr8"]
-[ext_resource type="Script" path="res://scripts/npc.gd" id="1_vfp1x"]
+[ext_resource type="Script" path="res://scripts/goal.gd" id="1_t3ju4"]
+[ext_resource type="Texture2D" uid="uid://6wsyfwms2q05" path="res://resources/images/npc.png" id="2_8jrcb"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j2lkc"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e5ajc"]
 radius = 2.0
 height = 6.0
 
@@ -176,19 +176,19 @@ advance_condition = &"is_moving"
 advance_mode = 2
 advance_condition = &"idle"
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ycmj7"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gcfkw"]
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_0ipfm")
 states/idle/position = Vector2(338, 100)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_vkgkm")
 states/walk/position = Vector2(573, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_qo1wm"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_l815o"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_dhwq0")]
 
-[node name="npc" type="CharacterBody2D"]
-script = ExtResource("1_vfp1x")
+[node name="goal" type="StaticBody2D"]
+script = ExtResource("1_t3ju4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_j2lkc")
+shape = SubResource("CapsuleShape2D_e5ajc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -196,7 +196,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_ycmj7")
+tree_root = SubResource("AnimationNodeStateMachine_gcfkw")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/conditions/idle = false
@@ -205,6 +205,5 @@ parameters/idle/blend_position = Vector2(-0.1072, -0.00436676)
 parameters/walk/blend_position = Vector2(0.2224, -0.170306)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ifcr8")
+texture = ExtResource("2_8jrcb")
 hframes = 22
-frame = 4

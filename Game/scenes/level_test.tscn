@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbwtcqsu0tyoi"]
+[gd_scene load_steps=8 format=3 uid="uid://cbwtcqsu0tyoi"]
 
 [ext_resource type="Script" path="res://scripts/level_test.gd" id="1_iafp2"]
 [ext_resource type="PackedScene" uid="uid://bseclalavyb7j" path="res://scenes/player.tscn" id="1_oowgq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cs821tfgin0jx" path="res://scenes/music_player.tscn" id="3_57qd5"]
 [ext_resource type="PackedScene" uid="uid://bpn7cdgb3jbif" path="res://scenes/hwall.tscn" id="3_duome"]
 [ext_resource type="PackedScene" uid="uid://b4veq0dlyxad1" path="res://scenes/vwall.tscn" id="4_3v56d"]
+[ext_resource type="PackedScene" uid="uid://bwcx4jjr4rqvd" path="res://scenes/goal.tscn" id="7_2tmjk"]
 
 [node name="level_test" type="Node2D"]
 script = ExtResource("1_iafp2")
@@ -17,7 +18,7 @@ offset_bottom = 223.0
 color = Color(0.780392, 0.941176, 0.847059, 1)
 
 [node name="player" parent="." instance=ExtResource("1_oowgq")]
-position = Vector2(73, 53)
+position = Vector2(89, 119)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(10, 10)
@@ -25,9 +26,10 @@ zoom = Vector2(10, 10)
 [node name="music_player" parent="player" instance=ExtResource("3_57qd5")]
 
 [node name="guard" parent="." instance=ExtResource("2_5ipbf")]
-position = Vector2(72, 26)
+position = Vector2(89, 91)
 
 [node name="walls" type="Node2D" parent="."]
+position = Vector2(17, 65)
 
 [node name="hwall" parent="walls" instance=ExtResource("3_duome")]
 position = Vector2(73, 41)
@@ -56,4 +58,8 @@ position = Vector2(92, 39)
 [node name="vwall6" parent="walls" instance=ExtResource("4_3v56d")]
 position = Vector2(92, 23)
 
+[node name="goal" parent="." instance=ExtResource("7_2tmjk")]
+position = Vector2(88, 60)
+
+[connection signal="level_won" from="player" to="." method="_on_player_level_won"]
 [connection signal="player_seen" from="guard" to="." method="_on_guard_player_seen"]
