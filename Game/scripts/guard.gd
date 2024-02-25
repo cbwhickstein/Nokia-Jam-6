@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 
 # signals
+signal player_seen
 
 # gloabal vars
 var direction: Vector2 = Vector2.ZERO
@@ -76,7 +77,10 @@ func behavior():
 		# enable current view and disable others
 		enable_view(direction)
 		if (view.player_in_sight()):
-			print(Time.get_ticks_msec(), " Player in sight")
+			seeing_player = true
+			player_seen.emit()
+		else:
+			seeing_player = false
 		
 		# check for wall and mirror direction
 		if (collide):
@@ -85,6 +89,8 @@ func behavior():
 		
 		if (not seeing_player):
 			velocity = direction
+		else:
+			velocity = Vector2.ZERO
 
 func set_state(new_state: StateEnum):
 	state = new_state

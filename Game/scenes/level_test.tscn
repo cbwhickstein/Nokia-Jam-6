@@ -52,3 +52,5 @@ position = Vector2(92, 39)
 
 [node name="vwall6" parent="walls" instance=ExtResource("4_3v56d")]
 position = Vector2(92, 23)
+
+[connection signal="player_seen" from="guard" to="." method="_on_guard_player_seen"]
