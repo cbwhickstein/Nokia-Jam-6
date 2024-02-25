@@ -207,4 +207,3 @@ parameters/walk/blend_position = Vector2(0.2224, -0.170306)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ifcr8")
 hframes = 22
-frame = 4

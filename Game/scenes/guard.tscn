@@ -377,7 +377,6 @@ shape = SubResource("RectangleShape2D_4fxrs")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_he2wx")
 hframes = 22
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
