@@ -10,3 +10,7 @@ func _ready():
 	music_player.current_state = music_player.state.prison
 
 
+
+
+func _on_player_start_level():
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")

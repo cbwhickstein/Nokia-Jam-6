@@ -75,3 +75,5 @@ shape = SubResource("RectangleShape2D_71s34")
 [node name="music_player" parent="." instance=ExtResource("6_mimgt")]
 
 [node name="ui" parent="." instance=ExtResource("7_blk7b")]
+
+[connection signal="start_level" from="characters/player" to="." method="_on_player_start_level"]

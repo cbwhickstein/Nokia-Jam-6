@@ -2,9 +2,12 @@ extends CharacterBody2D
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 
+# signals
+signal start_level
+
 # gloabal vars
 var direction: Vector2 = Vector2.ZERO
-
+var collision: KinematicCollision2D = null
 
 # CONSTANTS
 var speed = 0.1
@@ -26,10 +29,16 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 		
 	if (step_timer >= max_step_timer):
-		move_and_collide(velocity)
+		collision = move_and_collide(velocity)
 		step_timer = 0
 	else:
 		step_timer += delta	
+		
+	if (collision):
+		match collision.get_collider().name:
+			"front_bars":
+				start_level.emit()
+		collision = null
 
 func update_animation_parameters():
 	if (velocity == Vector2.ZERO):
