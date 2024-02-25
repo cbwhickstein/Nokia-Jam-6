@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbwtcqsu0tyoi"]
+[gd_scene load_steps=7 format=3 uid="uid://cbwtcqsu0tyoi"]
 
 [ext_resource type="Script" path="res://scripts/level_test.gd" id="1_iafp2"]
 [ext_resource type="PackedScene" uid="uid://bseclalavyb7j" path="res://scenes/player.tscn" id="1_oowgq"]
 [ext_resource type="PackedScene" uid="uid://bhrmfhean0i7t" path="res://scenes/guard.tscn" id="2_5ipbf"]
+[ext_resource type="PackedScene" uid="uid://cs821tfgin0jx" path="res://scenes/music_player.tscn" id="3_57qd5"]
 [ext_resource type="PackedScene" uid="uid://bpn7cdgb3jbif" path="res://scenes/hwall.tscn" id="3_duome"]
 [ext_resource type="PackedScene" uid="uid://b4veq0dlyxad1" path="res://scenes/vwall.tscn" id="4_3v56d"]
 
@@ -20,6 +21,8 @@ position = Vector2(73, 53)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(10, 10)
+
+[node name="music_player" parent="player" instance=ExtResource("3_57qd5")]
 
 [node name="guard" parent="." instance=ExtResource("2_5ipbf")]
 position = Vector2(72, 26)

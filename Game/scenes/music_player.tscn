@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://cs821tfgin0jx"]
+
+[ext_resource type="Script" path="res://scripts/music_player.gd" id="1_0whk3"]
+[ext_resource type="AudioStream" uid="uid://douxbr2qu4l5n" path="res://resources/music/fleeing_music.wav" id="1_p87th"]
+[ext_resource type="AudioStream" uid="uid://bb0st7o85kw6u" path="res://resources/music/prison_music.wav" id="3_8sgnf"]
+[ext_resource type="AudioStream" uid="uid://35tertxjd1m7" path="res://resources/music/game_over_music.wav" id="4_ue0st"]
+[ext_resource type="AudioStream" uid="uid://b8q64yfakv8i" path="res://resources/music/win_music.wav" id="5_ypp3k"]
+[ext_resource type="AudioStream" uid="uid://c5llyx2tjiuda" path="res://resources/music/start_sound.wav" id="6_p83os"]
+[ext_resource type="AudioStream" uid="uid://cq4nywc0081mf" path="res://resources/music/alert_sound_effect.wav" id="7_rewa0"]
+
+[node name="music_player" type="Node2D"]
+script = ExtResource("1_0whk3")
+
+[node name="escape" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_p87th")
+
+[node name="prison" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8sgnf")
+
+[node name="game_over" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ue0st")
+
+[node name="win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ypp3k")
+
+[node name="start" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_p83os")
+
+[node name="alert" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_rewa0")
+
+[connection signal="finished" from="escape" to="." method="_on_escape_finished"]
+[connection signal="finished" from="prison" to="." method="_on_prison_finished"]

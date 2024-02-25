@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx5mwhgeby3qi"]
+[gd_scene load_steps=11 format=3 uid="uid://bx5mwhgeby3qi"]
 
 [ext_resource type="PackedScene" uid="uid://bseclalavyb7j" path="res://scenes/player.tscn" id="1_1bycy"]
 [ext_resource type="Script" path="res://scripts/prison.gd" id="1_bww6y"]
 [ext_resource type="Texture2D" uid="uid://dufrderbln6jg" path="res://resources/images/front_bars.png" id="1_xgtk4"]
 [ext_resource type="PackedScene" uid="uid://cudb5nl6akvdj" path="res://scenes/npc.tscn" id="2_4qbd3"]
 [ext_resource type="PackedScene" uid="uid://bhrmfhean0i7t" path="res://scenes/guard.tscn" id="3_tyb0u"]
+[ext_resource type="PackedScene" uid="uid://cs821tfgin0jx" path="res://scenes/music_player.tscn" id="6_mimgt"]
+[ext_resource type="PackedScene" uid="uid://dk8rd2utm3t14" path="res://scenes/ui.tscn" id="7_blk7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3d7c"]
 size = Vector2(2, 75.5)
@@ -69,3 +71,7 @@ texture = ExtResource("1_xgtk4")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="border/front_bars"]
 position = Vector2(1.5, -35)
 shape = SubResource("RectangleShape2D_71s34")
+
+[node name="music_player" parent="." instance=ExtResource("6_mimgt")]
+
+[node name="ui" parent="." instance=ExtResource("7_blk7b")]
